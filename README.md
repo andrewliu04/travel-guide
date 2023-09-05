@@ -1,3 +1,8 @@
+# Travel Guide with Google Maps API
+
+A travel guide web app to assist in finding hotels, restaurants, and more in a user specified area.\
+Use the map to view weather and attractions in nearby locations. Click on any of the tabs on the map to view further details about the selected attraction.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
