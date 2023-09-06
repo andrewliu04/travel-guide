@@ -10,8 +10,8 @@ const options = {
     tr_longitude: '109.149359', 
   },
   headers: {
-    'X-RapidAPI-Key': '',
-    'X-RapidAPI-Host': ''
+    'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
+    'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
   }
 };
 
