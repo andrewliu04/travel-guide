@@ -8,6 +8,16 @@ import Map from './components/Map/Map';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
+    
+    const [coordinates, setCoordinates] = useState({})
+    const [bounds, setBounds] = useState(null);
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(({ coords: {latitude, longitude} }) => {
+            setCoordinates({ lat: latitude, lng: longitude });
+        })
+    }, []);
+
 
     useEffect(() => {
         getPlacesData()
@@ -15,7 +25,7 @@ const App = () => {
                 console.log(data);
                 setPlaces(data);
             })
-    }, [])
+    }, [coordinates, bounds]);
 
     return (
         <>
@@ -26,7 +36,11 @@ const App = () => {
                     <List />
                 </Grid>
                 <Grid item xs={12} md={8}>
-                    <Map />
+                    <Map 
+                        coordinates={coordinates}
+                        setCoordinates={setCoordinates}
+                        setBounds={setBounds}
+                    />
                 </Grid>
             </Grid>
         </>
